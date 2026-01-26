@@ -29,7 +29,6 @@ nav {
 .nav-links li a:hover { color: #d4af37; }
 .nav-links li a:hover::after { width: 100%; }
 
-
 /* === HERO SECTION === */
 .hero { 
     height: 100vh; 
@@ -53,11 +52,13 @@ nav {
 .animated-text span {
     display: inline-block;
     color: transparent;
+    -webkit-text-fill-color: transparent; /* Forzado para móviles */
     background-clip: text; -webkit-background-clip: text;
     will-change: transform, background-position;
+    transform: translateZ(0); /* Aceleración GPU */
 }
 
-/* FASE 1: ZOALUM (Oro, Plata y Brillo) */
+/* FASE 1: ZOALUM */
 #word-ZOALUM span {
     background-image: linear-gradient(135deg, 
         #bf953f 0%, #fcf6ba 15%, #b38728 25%, #fbf5b7 35%, #aa771c 45%, 
@@ -69,30 +70,29 @@ nav {
     animation: liquidTexture 8s ease-in-out infinite alternate, elegantWave 10s ease-in-out infinite; 
 }
 
-/* FASE 2: D'VIL (Rojo y Negro - Fase Imponente) */
-#word-D\27VIL span {
+/* FASE 2: D'VIL (Corregido para contraste real) */
+#word-DVIL span {
     background-image: linear-gradient(135deg, 
-        #000000 0%, #3a0000 20%, #8b0000 40%, #ff0000 50%, #8b0000 60%, #3a0000 80%, #000000 100%
+        #000000 0%, #4a0000 25%, #ff0000 50%, #4a0000 75%, #000000 100%
     );
     background-size: 400% 400%;
-    -webkit-text-stroke: 1px rgba(255, 0, 0, 0.2);
+    -webkit-text-stroke: 1px rgba(255, 0, 0, 0.3);
     animation: darkLiquid 6s ease-in-out infinite alternate, elegantWave 10s ease-in-out infinite;
 }
 
-/* Delays de animación para ZOALUM */
-#word-ZOALUM span:nth-child(1) { animation-delay: 0.00s, 0.0s; }
-#word-ZOALUM span:nth-child(2) { animation-delay: 0.15s, 0.1s; } 
-#word-ZOALUM span:nth-child(3) { animation-delay: 0.30s, 0.2s; } 
-#word-ZOALUM span:nth-child(4) { animation-delay: 0.45s, 0.3s; }
-#word-ZOALUM span:nth-child(5) { animation-delay: 0.60s, 0.4s; }
-#word-ZOALUM span:nth-child(6) { animation-delay: 0.75s, 0.5s; }
+/* Animación Delays */
+#word-ZOALUM span:nth-child(1) { animation-delay: 0.0s, 0.0s; }
+#word-ZOALUM span:nth-child(2) { animation-delay: 0.1s, 0.1s; } 
+#word-ZOALUM span:nth-child(3) { animation-delay: 0.2s, 0.2s; } 
+#word-ZOALUM span:nth-child(4) { animation-delay: 0.3s, 0.3s; }
+#word-ZOALUM span:nth-child(5) { animation-delay: 0.4s, 0.4s; }
+#word-ZOALUM span:nth-child(6) { animation-delay: 0.5s, 0.5s; }
 
-/* Delays de animación para D'VIL */
-#word-D\27VIL span:nth-child(1) { animation-delay: 0.00s, 0.6s; } 
-#word-D\27VIL span:nth-child(2) { animation-delay: 0.15s, 0.7s; }
-#word-D\27VIL span:nth-child(3) { animation-delay: 0.30s, 0.8s; }
-#word-D\27VIL span:nth-child(4) { animation-delay: 0.45s, 0.9s; }
-#word-D\27VIL span:nth-child(5) { animation-delay: 0.60s, 1.0s; }
+#word-DVIL span:nth-child(1) { animation-delay: 0.0s, 0.6s; } 
+#word-DVIL span:nth-child(2) { animation-delay: 0.1s, 0.7s; }
+#word-DVIL span:nth-child(3) { animation-delay: 0.2s, 0.8s; }
+#word-DVIL span:nth-child(4) { animation-delay: 0.3s, 0.9s; }
+#word-DVIL span:nth-child(5) { animation-delay: 0.4s, 1.0s; }
 
 .subtitle-container {
     display: flex; flex-direction: column; align-items: center;
@@ -100,127 +100,61 @@ nav {
     animation: fadeInUp 1s ease-out forwards 2s;
 }
 .divider { width: 100px; height: 1px; background: #666; margin: 25px 0; transition: 0.5s; }
-.subtitle-container:hover .divider { width: 150px; background: #d4af37; }
 .subtitle { font-size: 12px; letter-spacing: 6px; color: #888; margin-bottom: 40px; text-transform: uppercase; }
 
 .btn-luxury { 
     background: transparent; color: #d4af37; border: 1px solid #d4af37; 
     padding: 18px 55px; letter-spacing: 4px; text-transform: uppercase; text-decoration: none;
     font-size: 10px; cursor: pointer; transition: 0.4s; 
-    position: relative; overflow: hidden; display: inline-block;
     opacity: 0; transform: translateY(20px);
     animation: fadeInUp 1s ease-out forwards 2.3s;
 }
 .btn-luxury:hover { background: #d4af37; color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.5); }
-.btn-luxury::before {
-    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-    transition: 0.6s;
-}
-.btn-luxury:hover::before { left: 100%; }
 
-
-/* =========================================
-   SECCIÓN 2: COLECCIONES
-   ========================================= */
-.collections {
-    padding: 100px 5%;
-    background-color: #050505; 
-    position: relative; z-index: 2;
-}
-
+/* === COLECCIONES === */
+.collections { padding: 100px 5%; background-color: #050505; position: relative; z-index: 2; }
 .section-title { text-align: center; margin-bottom: 60px; }
-.section-title h2 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #fff; font-weight: 400; letter-spacing: 5px; margin-bottom: 10px;}
-.divider-small { width: 50px; height: 2px; background: #d4af37; margin: 0 auto; }
-
-.cards-container {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; max-width: 1200px; margin: 0 auto;
-}
-
-.card {
-    position: relative; height: 500px; overflow: hidden; cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.5s ease;
-    background-color: #222;
-}
-
-.card-image {
-    width: 100%; height: 100%;
-    background-size: cover; background-position: center;
-    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
-    filter: grayscale(100%) brightness(0.8); 
-}
-
-/* IMÁGENES */
-.img-woman { background-image: url('https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
-.img-man { background-image: url('https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
-.img-exclusive { background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop'); }
-
-.card-overlay {
-    position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px;
-    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
-    transform: translateY(20px); transition: 0.5s;
-    z-index: 5; 
-}
-
-.card h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #ffffff !important; margin-bottom: 5px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
-.card p { font-size: 10px; letter-spacing: 3px; color: #cccccc !important; margin-bottom: 20px; }
-.link-gold { display: inline-block; color: #d4af37; font-size: 11px; letter-spacing: 2px; position: relative; opacity: 0; transform: translateY(10px); transition: 0.4s 0.1s; font-weight: 700; }
-
-.card:hover { border-color: #d4af37; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.section-title h2 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #fff; letter-spacing: 5px; }
+.cards-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+.card { position: relative; height: 500px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); background-color: #222; }
+.card-image { width: 100%; height: 100%; background-size: cover; background-position: center; filter: grayscale(100%) brightness(0.8); transition: 0.8s; }
 .card:hover .card-image { filter: grayscale(0%) brightness(1); transform: scale(1.1); }
-.card:hover .card-overlay { transform: translateY(0); }
-.card:hover .link-gold { opacity: 1; transform: translateY(0); }
 
+/* === FOOTER === */
+footer { position: relative; background-color: #000; padding: 80px 5% 40px; border-top: 1px solid rgba(212, 175, 55, 0.2); }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; letter-spacing: 5px; text-align: center; background: linear-gradient(135deg, #bf953f, #fcf6ba, #aa771c); -webkit-background-clip: text; color: transparent; }
 
-/* =========================================
-   FOOTER
-   ========================================= */
-footer {
-    position: relative; background-color: #000; padding: 80px 5% 40px;
-    z-index: 5; border-top: 1px solid rgba(212, 175, 55, 0.2);
+/* === DISTRIBUCIÓN MÓVIL (LA MAGIA) === */
+@media (max-width: 768px) {
+    nav { flex-direction: column; padding: 20px 0; gap: 15px; }
+    .nav-links { gap: 15px; }
+    .nav-links li a { font-size: 9px; letter-spacing: 1px; }
+    
+    .hero { padding: 0 5%; }
+    .title-container { flex-direction: column; gap: 10px; }
+    .spacer { display: none; }
+    .animated-text { font-size: 16vw; width: 100%; justify-content: center; }
+    
+    .subtitle { font-size: 9px; letter-spacing: 3px; margin-bottom: 20px; }
+    .btn-luxury { padding: 15px 40px; }
+
+    .card { height: 400px; }
 }
-.footer-container { display: flex; flex-direction: column; align-items: center; text-align: center; }
-.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; letter-spacing: 5px; margin-bottom: 20px; background: linear-gradient(135deg, #bf953f, #fcf6ba, #aa771c); background-clip: text; -webkit-background-clip: text; color: transparent; }
-.footer-text { font-size: 10px; letter-spacing: 4px; color: #666; margin-bottom: 50px; margin-top: 20px; }
-.social-icons { display: flex; gap: 50px; margin-bottom: 60px; flex-wrap: wrap; justify-content: center; }
-.social-link { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #444; transition: 0.4s ease; }
-.social-link i { font-size: 24px; margin-bottom: 10px; transition: 0.4s ease; }
-.social-link span { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; opacity: 0; transform: translateY(10px); transition: 0.4s ease; }
-.social-link:hover { color: #d4af37; }
-.social-link:hover i { transform: translateY(-5px); text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); }
-.social-link:hover span { opacity: 1; transform: translateY(0); }
-.copyright { font-size: 9px; color: #333; letter-spacing: 2px; border-top: 1px solid #111; padding-top: 30px; width: 100%; max-width: 600px; }
-
 
 /* === KEYFRAMES === */
 @keyframes liquidTexture {
     0% { background-position: 0% 0%; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6)); }
-    50% { background-position: 50% 50%; filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)); }
-    100% { background-position: 100% 100%; filter: drop-shadow(0 0 15px rgba(168, 228, 255, 0.8)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.3)); }
+    100% { background-position: 100% 100%; filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.4)); }
 }
-
-/* NUEVA ANIMACIÓN PARA D'VIL: Negro y Rojo */
 @keyframes darkLiquid {
-    0% { background-position: 0% 0%; filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.4)); }
-    50% { background-position: 50% 50%; filter: drop-shadow(0 0 25px rgba(139, 0, 0, 0.8)); }
-    100% { background-position: 100% 100%; filter: drop-shadow(0 0 15px rgba(0, 0, 0, 1)) drop-shadow(0 0 30px rgba(255, 0, 0, 0.5)); }
+    0% { background-position: 0% 0%; filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.3)); }
+    100% { background-position: 100% 100%; filter: drop-shadow(0 0 25px rgba(255, 0, 0, 0.6)); }
 }
-
 @keyframes elegantWave {
-    0% { transform: translateY(0) scale(1); }
-    10% { transform: translateY(-0.6em) scale(1.05); } 
-    20% { transform: translateY(0) scale(1); } 
-    100% { transform: translateY(0) scale(1); } 
+    0%, 100% { transform: translateY(0); }
+    10% { transform: translateY(-0.5em); }
 }
-
 @keyframes fadeInDown { to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 @keyframes revealContainer { to { opacity: 1; transform: scale(1); } }
-@keyframes subtlePulse { 0% { background-size: 120% 120%; } 100% { background-size: 135% 135%; } }
-
-@media (max-width: 768px) {
-    .spacer { display: none; }
-    .title-container { flex-direction: column; gap: 15px; }
-    .animated-text { font-size: 14vw; }
-}
+@keyframes subtlePulse { 0% { background-size: 120% 120%; } 100% { background-size: 130% 130%; } }
