@@ -54,6 +54,11 @@ nav {
     display: inline-block;
     color: transparent;
     background-clip: text; -webkit-background-clip: text;
+    will-change: transform, background-position;
+}
+
+/* FASE 1: ZOALUM (Oro, Plata y Brillo) */
+#word-ZOALUM span {
     background-image: linear-gradient(135deg, 
         #bf953f 0%, #fcf6ba 15%, #b38728 25%, #fbf5b7 35%, #aa771c 45%, 
         #dbe4e6 48%, #ffffff 50%, #dbe4e6 52%, 
@@ -61,22 +66,33 @@ nav {
     );
     background-size: 400% 400%;
     -webkit-text-stroke: 1px rgba(255,255,255,0.05);
-    will-change: transform, background-position;
     animation: liquidTexture 8s ease-in-out infinite alternate, elegantWave 10s ease-in-out infinite; 
 }
 
-#word-conejo span:nth-child(1) { animation-delay: 0.00s, 0.0s; }
-#word-conejo span:nth-child(2) { animation-delay: 0.15s, 0.1s; } 
-#word-conejo span:nth-child(3) { animation-delay: 0.30s, 0.2s; } 
-#word-conejo span:nth-child(4) { animation-delay: 0.45s, 0.3s; }
-#word-conejo span:nth-child(5) { animation-delay: 0.60s, 0.4s; }
-#word-conejo span:nth-child(6) { animation-delay: 0.75s, 0.5s; }
+/* FASE 2: D'VIL (Rojo y Negro - Fase Imponente) */
+#word-D\27VIL span {
+    background-image: linear-gradient(135deg, 
+        #000000 0%, #3a0000 20%, #8b0000 40%, #ff0000 50%, #8b0000 60%, #3a0000 80%, #000000 100%
+    );
+    background-size: 400% 400%;
+    -webkit-text-stroke: 1px rgba(255, 0, 0, 0.2);
+    animation: darkLiquid 6s ease-in-out infinite alternate, elegantWave 10s ease-in-out infinite;
+}
 
-#word-caro span { animation-direction: alternate-reverse, normal; }
-#word-caro span:nth-child(1) { animation-delay: 0.00s, 0.6s; } 
-#word-caro span:nth-child(2) { animation-delay: 0.15s, 0.7s; }
-#word-caro span:nth-child(3) { animation-delay: 0.30s, 0.8s; }
-#word-caro span:nth-child(4) { animation-delay: 0.45s, 0.9s; }
+/* Delays de animación para ZOALUM */
+#word-ZOALUM span:nth-child(1) { animation-delay: 0.00s, 0.0s; }
+#word-ZOALUM span:nth-child(2) { animation-delay: 0.15s, 0.1s; } 
+#word-ZOALUM span:nth-child(3) { animation-delay: 0.30s, 0.2s; } 
+#word-ZOALUM span:nth-child(4) { animation-delay: 0.45s, 0.3s; }
+#word-ZOALUM span:nth-child(5) { animation-delay: 0.60s, 0.4s; }
+#word-ZOALUM span:nth-child(6) { animation-delay: 0.75s, 0.5s; }
+
+/* Delays de animación para D'VIL */
+#word-D\27VIL span:nth-child(1) { animation-delay: 0.00s, 0.6s; } 
+#word-D\27VIL span:nth-child(2) { animation-delay: 0.15s, 0.7s; }
+#word-D\27VIL span:nth-child(3) { animation-delay: 0.30s, 0.8s; }
+#word-D\27VIL span:nth-child(4) { animation-delay: 0.45s, 0.9s; }
+#word-D\27VIL span:nth-child(5) { animation-delay: 0.60s, 1.0s; }
 
 .subtitle-container {
     display: flex; flex-direction: column; align-items: center;
@@ -105,7 +121,7 @@ nav {
 
 
 /* =========================================
-   SECCIÓN 2: COLECCIONES (IMÁGENES ARREGLADAS)
+   SECCIÓN 2: COLECCIONES
    ========================================= */
 .collections {
     padding: 100px 5%;
@@ -115,7 +131,6 @@ nav {
 
 .section-title { text-align: center; margin-bottom: 60px; }
 .section-title h2 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #fff; font-weight: 400; letter-spacing: 5px; margin-bottom: 10px;}
-
 .divider-small { width: 50px; height: 2px; background: #d4af37; margin: 0 auto; }
 
 .cards-container {
@@ -126,7 +141,7 @@ nav {
 .card {
     position: relative; height: 500px; overflow: hidden; cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.5s ease;
-    background-color: #222; /* Fondo de seguridad por si falla la imagen */
+    background-color: #222;
 }
 
 .card-image {
@@ -136,24 +151,10 @@ nav {
     filter: grayscale(100%) brightness(0.8); 
 }
 
-/* --- IMÁGENES ACTUALIZADAS --- */
-
-/* Mujer (Ella) */
-.img-woman { 
-    background-image: url('https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); 
-}
-
-/* --- NUEVA IMAGEN PARA ÉL (CORREGIDA) --- */
-.img-man { 
-    /* Usamos una nueva URL más fiable */
-    background-image: url('https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); 
-}
-
-/* Exclusivos (Iconos) */
-.img-exclusive { 
-    background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop'); 
-}
-
+/* IMÁGENES */
+.img-woman { background-image: url('https://images.unsplash.com/photo-1539008835657-9e8e9680c956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+.img-man { background-image: url('https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+.img-exclusive { background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=1000&auto=format&fit=crop'); }
 
 .card-overlay {
     position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px;
@@ -162,26 +163,9 @@ nav {
     z-index: 5; 
 }
 
-/* Textos forzados a blanco */
-.card h3 { 
-    font-family: 'Cormorant Garamond', serif; 
-    font-size: 2rem; 
-    color: #ffffff !important; 
-    margin-bottom: 5px; 
-    text-shadow: 0 2px 4px rgba(0,0,0,0.8); 
-}
-
-.card p { 
-    font-size: 10px; letter-spacing: 3px; 
-    color: #cccccc !important; 
-    margin-bottom: 20px; 
-}
-
-.link-gold {
-    display: inline-block; color: #d4af37; font-size: 11px; letter-spacing: 2px;
-    position: relative; opacity: 0; transform: translateY(10px); transition: 0.4s 0.1s;
-    font-weight: 700;
-}
+.card h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #ffffff !important; margin-bottom: 5px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+.card p { font-size: 10px; letter-spacing: 3px; color: #cccccc !important; margin-bottom: 20px; }
+.link-gold { display: inline-block; color: #d4af37; font-size: 11px; letter-spacing: 2px; position: relative; opacity: 0; transform: translateY(10px); transition: 0.4s 0.1s; font-weight: 700; }
 
 .card:hover { border-color: #d4af37; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
 .card:hover .card-image { filter: grayscale(0%) brightness(1); transform: scale(1.1); }
@@ -190,41 +174,23 @@ nav {
 
 
 /* =========================================
-   SECCIÓN 3: CONTACTO (FOOTER)
+   FOOTER
    ========================================= */
 footer {
     position: relative; background-color: #000; padding: 80px 5% 40px;
     z-index: 5; border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
-
 .footer-container { display: flex; flex-direction: column; align-items: center; text-align: center; }
-
-.footer-logo {
-    font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; letter-spacing: 5px; margin-bottom: 20px;
-    background: linear-gradient(135deg, #bf953f, #fcf6ba, #aa771c);
-    background-clip: text; -webkit-background-clip: text; color: transparent;
-}
-
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; letter-spacing: 5px; margin-bottom: 20px; background: linear-gradient(135deg, #bf953f, #fcf6ba, #aa771c); background-clip: text; -webkit-background-clip: text; color: transparent; }
 .footer-text { font-size: 10px; letter-spacing: 4px; color: #666; margin-bottom: 50px; margin-top: 20px; }
-
 .social-icons { display: flex; gap: 50px; margin-bottom: 60px; flex-wrap: wrap; justify-content: center; }
-
 .social-link { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #444; transition: 0.4s ease; }
-
 .social-link i { font-size: 24px; margin-bottom: 10px; transition: 0.4s ease; }
 .social-link span { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; opacity: 0; transform: translateY(10px); transition: 0.4s ease; }
-
 .social-link:hover { color: #d4af37; }
 .social-link:hover i { transform: translateY(-5px); text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); }
 .social-link:hover span { opacity: 1; transform: translateY(0); }
-
 .copyright { font-size: 9px; color: #333; letter-spacing: 2px; border-top: 1px solid #111; padding-top: 30px; width: 100%; max-width: 600px; }
-
-@media (max-width: 768px) {
-    .social-icons { gap: 30px; }
-    .social-link span { opacity: 1; transform: translateY(0); display: block; margin-top: 5px; }
-    .social-link i { font-size: 20px; }
-}
 
 
 /* === KEYFRAMES === */
@@ -232,6 +198,13 @@ footer {
     0% { background-position: 0% 0%; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6)); }
     50% { background-position: 50% 50%; filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)); }
     100% { background-position: 100% 100%; filter: drop-shadow(0 0 15px rgba(168, 228, 255, 0.8)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.3)); }
+}
+
+/* NUEVA ANIMACIÓN PARA D'VIL: Negro y Rojo */
+@keyframes darkLiquid {
+    0% { background-position: 0% 0%; filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.4)); }
+    50% { background-position: 50% 50%; filter: drop-shadow(0 0 25px rgba(139, 0, 0, 0.8)); }
+    100% { background-position: 100% 100%; filter: drop-shadow(0 0 15px rgba(0, 0, 0, 1)) drop-shadow(0 0 30px rgba(255, 0, 0, 0.5)); }
 }
 
 @keyframes elegantWave {
