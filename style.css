@@ -1,0 +1,467 @@
+/* =========================================
+   1. RESET Y BASE
+   ========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+    background-size: 120% 120%;
+    animation: subtlePulse 15s ease-in-out infinite alternate;
+    background-attachment: fixed;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVEGACIÓN
+   ========================================= */
+nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px 5%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    opacity: 0; transform: translateY(-20px);
+    animation: fadeInDown 1s ease-out forwards 0.5s;
+    position: relative; z-index: 10;
+}
+
+.logo { color: #d4af37; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 24px; letter-spacing: 4px; }
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links li a { color: #666; text-decoration: none; font-size: 11px; letter-spacing: 2px; transition: 0.3s; position: relative; }
+.nav-links li a::after { content: ''; position: absolute; width: 0%; height: 1px; bottom: -5px; left: 0; background: #d4af37; transition: 0.3s; }
+.nav-links li a:hover { color: #d4af37; }
+.nav-links li a:hover::after { width: 100%; }
+
+/* =========================================
+   3. HERO SECTION (ANIMACIONES PREMIUM RECUPERADAS)
+   ========================================= */
+.hero {
+    height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+}
+
+.title-container {
+    display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
+    opacity: 0; transform: scale(0.9);
+    animation: revealContainer 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 1s;
+}
+
+.animated-text {
+    font-size: 7vw; font-family: 'Cormorant Garamond', serif;
+    font-weight: 700; cursor: default; margin: 0;
+    display: flex;
+    perspective: 1000px; /* RECUPERADO: Efecto de profundidad 3D */
+}
+
+.spacer { width: 3vw; }
+
+.animated-text span {
+    display: inline-block;
+    color: transparent;
+    background-clip: text; 
+    -webkit-background-clip: text;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    will-change: transform, background-position;
+}
+
+/* FASE 1: ZOALUM (Oro/Plata) - Estilos Originales */
+#word-ZOALUM span {
+    background-image: linear-gradient(135deg,
+        #bf953f 0%, #fcf6ba 15%, #b38728 25%, #fbf5b7 35%, #aa771c 45%,
+        #dbe4e6 48%, #ffffff 50%, #dbe4e6 52%,
+        #e0f7fa 60%, #ffffff 75%, #a8e4ff 85%, #ffffff 95%, #e0f7fa 100%
+    );
+    background-size: 400% 400%;
+    -webkit-text-stroke: 1px rgba(255,255,255,0.05);
+    animation: liquidTexturePC 8s ease-in-out infinite alternate, 
+               elegantWave 10s ease-in-out infinite;
+}
+
+/* FASE 2: D'VIL (Rojo/Negro) - Estilos Originales */
+#word-DVIL span {
+    background-image: linear-gradient(135deg,
+        #000000 0%, #3a0000 20%, #8b0000 40%, #ff0000 50%, 
+        #8b0000 60%, #3a0000 80%, #000000 100%
+    );
+    background-size: 400% 400%;
+    -webkit-text-stroke: 1px rgba(255, 0, 0, 0.2);
+    animation: darkLiquidPC 6s ease-in-out infinite alternate, 
+               elegantWave 10s ease-in-out infinite;
+}
+
+/* Delays Originales */
+#word-ZOALUM span:nth-child(1) { animation-delay: 0.00s, 0.0s; }
+#word-ZOALUM span:nth-child(2) { animation-delay: 0.15s, 0.1s; }
+#word-ZOALUM span:nth-child(3) { animation-delay: 0.30s, 0.2s; }
+#word-ZOALUM span:nth-child(4) { animation-delay: 0.45s, 0.3s; }
+#word-ZOALUM span:nth-child(5) { animation-delay: 0.60s, 0.4s; }
+#word-ZOALUM span:nth-child(6) { animation-delay: 0.75s, 0.5s; }
+
+#word-DVIL span:nth-child(1) { animation-delay: 0.00s, 0.6s; }
+#word-DVIL span:nth-child(2) { animation-delay: 0.15s, 0.7s; }
+#word-DVIL span:nth-child(3) { animation-delay: 0.30s, 0.8s; }
+#word-DVIL span:nth-child(4) { animation-delay: 0.45s, 0.9s; }
+#word-DVIL span:nth-child(5) { animation-delay: 0.60s, 1.0s; }
+
+.subtitle-container {
+    display: flex; flex-direction: column; align-items: center;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards 2s;
+}
+
+.divider { width: 100px; height: 1px; background: #666; margin: 25px 0; transition: 0.5s; }
+.subtitle-container:hover .divider { width: 150px; background: #d4af37; }
+.subtitle { font-size: 12px; letter-spacing: 6px; color: #888; margin-bottom: 40px; text-transform: uppercase; }
+
+/* BOTÓN DE LUJO (Recuperado el efecto de brillo) */
+.btn-luxury {
+    background: transparent; color: #d4af37; border: 1px solid #d4af37;
+    padding: 18px 55px; letter-spacing: 4px; text-transform: uppercase; text-decoration: none;
+    font-size: 10px; cursor: pointer; transition: 0.4s;
+    position: relative; overflow: hidden; display: inline-block;
+    opacity: 0; transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards 2.3s;
+}
+
+.btn-luxury:hover { background: #d4af37; color: #000; box-shadow: 0 0 30px rgba(212, 175, 55, 0.5); }
+
+/* Efecto de barrido brillante recuperado */
+.btn-luxury::before {
+    content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+    transition: 0.6s;
+}
+.btn-luxury:hover::before { left: 100%; }
+
+/* =========================================
+   4. SECCIÓN COLECCIONES (PORTADA)
+   ========================================= */
+.collections {
+    padding: 100px 5%;
+    background-color: #050505;
+    position: relative; z-index: 2;
+}
+
+.section-title { text-align: center; margin-bottom: 60px; }
+.section-title h2 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; color: #fff; font-weight: 400; letter-spacing: 5px; margin-bottom: 10px;}
+.divider-small { width: 50px; height: 2px; background: #d4af37; margin: 0 auto; }
+
+.cards-container {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; max-width: 1200px; margin: 0 auto;
+}
+
+.card {
+    position: relative; height: 500px; overflow: hidden; cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.5s ease;
+    background-color: #222;
+}
+
+/* Enlace completo */
+.card-link { text-decoration: none; display: block; }
+
+.card-image {
+    width: 100%; height: 100%;
+    background-size: cover; background-position: center;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+    filter: grayscale(100%) brightness(0.8);
+}
+
+/* IMÁGENES CATEGORÍAS */
+.cat-ella { background-image: url('assets/1769663125736.png'); filter: grayscale(20%); }
+.cat-el { background-image: url('https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+.cat-iconos { background-image: url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+
+.card-overlay {
+    position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+    transform: translateY(20px); transition: 0.5s;
+    z-index: 5;
+}
+
+.card h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: #ffffff !important; margin-bottom: 5px; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+.card p { font-size: 10px; letter-spacing: 3px; color: #cccccc !important; margin-bottom: 20px; }
+.link-gold { display: inline-block; color: #d4af37; font-size: 11px; letter-spacing: 2px; position: relative; opacity: 0; transform: translateY(10px); transition: 0.4s 0.1s; font-weight: 700; }
+
+.card:hover { border-color: #d4af37; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.card:hover .card-image { filter: grayscale(0%) brightness(1); transform: scale(1.1); }
+.card:hover .card-overlay { transform: translateY(0); }
+.card:hover .link-gold { opacity: 1; transform: translateY(0); }
+
+/* ESTILOS "PRÓXIMAMENTE" */
+.coming-soon { cursor: not-allowed; opacity: 0.7; }
+.coming-soon:hover .card-image { transform: scale(1); filter: grayscale(100%) brightness(0.5); }
+.coming-soon:hover .status-text { color: #ff4444; font-size: 0; }
+.coming-soon:hover .status-text::after { content: 'PRÓXIMAMENTE'; font-size: 11px; display: block; letter-spacing: 2px; }
+
+/* =========================================
+   5. CATÁLOGO CON MINIATURAS (CORREGIDO PARA FONDO NEGRO COMPLETO)
+   ========================================= */
+.header-catalog { background-color: #000; padding: 20px 0; border-bottom: 1px solid #333; }
+.back-link { color: #d4af37; text-decoration: none; font-size: 11px; letter-spacing: 2px; border: 1px solid #d4af37; padding: 10px 20px; transition: 0.3s; margin-right: 5%; }
+.back-link:hover { background: #d4af37; color: #000; }
+
+.catalog-grid { padding: 80px 5%; min-height: 100vh; background-color: #0a0a0a; }
+.subtitle-catalog { text-align: center; color: #666; letter-spacing: 4px; font-size: 12px; margin-bottom: 20px; }
+.products-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 40px; max-width: 1200px; margin: 0 auto; }
+
+/* TARJETA DE PRODUCTO */
+.product-card { 
+    background: #ffffff; /* BLANCO PURO */
+    width: 350px;
+    border-radius: 4px; 
+    overflow: hidden; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+    transition: 0.3s;
+    
+    /* FLEXBOX: Esto obliga a que la tarjeta tenga estructura sólida */
+    display: flex; 
+    flex-direction: column; 
+    height: 100%;
+}
+.product-card:hover { transform: translateY(-5px); }
+
+/* ÁREA DE IMAGEN PRINCIPAL (CORRECCIÓN FONDO BLANCO Y OBJECT-FIT) */
+.main-image-area { 
+    width: 100%; 
+    height: 400px; /* Más altura para ver mejor a la modelo */
+    background-color: #ffffff; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    overflow: hidden;
+}
+
+.main-image-area img { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ESTO ELIMINA LAS FRANJAS BLANCAS EN FOTOS DE MODELO */
+    object-position: top center; /* Enfoca el rostro */
+    transition: opacity 0.2s ease; 
+}
+
+/* MINIATURAS */
+.thumbnails { display: flex; justify-content: center; gap: 10px; padding: 10px 0; background-color: #fff; border-bottom: 1px solid #eee; }
+.thumb { width: 50px; height: 50px; object-fit: cover; border: 1px solid #ddd; cursor: pointer; opacity: 0.7; transition: 0.3s; border-radius: 3px; }
+.thumb:hover, .thumb.active { opacity: 1; border-color: #d4af37; }
+
+/* INFO (CORRECCIÓN FONDO NEGRO COMPLETO) */
+.product-info { 
+    padding: 30px; 
+    text-align: center; 
+    background-color: #111; /* Negro sólido */
+    color: #fff; 
+    border-top: 3px solid #d4af37;
+    
+    /* Flex grow empuja el fondo negro hasta abajo */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.product-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #d4af37; margin-bottom: 10px; }
+.desc { font-size: 12px; color: #ccc; margin-bottom: 15px; line-height: 1.6; }
+.price { font-size: 18px; font-weight: 600; margin-bottom: 25px; color: #fff; }
+
+.btn-buy { 
+    display: inline-block; background: #25D366; color: #fff; text-decoration: none; padding: 12px 30px; 
+    font-size: 12px; letter-spacing: 2px; font-weight: 600; border-radius: 50px; transition: 0.3s; 
+    align-self: center; 
+}
+.btn-buy:hover { background: #128C7E; box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); }
+
+/* =========================================
+   6. FOOTER Y REDES
+   ========================================= */
+footer {
+    position: relative; background-color: #000; padding: 80px 5% 40px;
+    z-index: 5; border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.footer-container { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; letter-spacing: 5px; margin-bottom: 20px; background: linear-gradient(135deg, #bf953f, #fcf6ba, #aa771c); background-clip: text; -webkit-background-clip: text; color: transparent; }
+.footer-text { font-size: 10px; letter-spacing: 4px; color: #666; margin-bottom: 50px; margin-top: 20px; }
+.social-icons { display: flex; gap: 50px; margin-bottom: 60px; flex-wrap: wrap; justify-content: center; }
+
+.social-link { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: #444; transition: 0.4s ease; }
+.social-link i { font-size: 24px; margin-bottom: 10px; transition: 0.4s ease; }
+.social-link span { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; opacity: 0; transform: translateY(10px); transition: 0.4s ease; }
+
+.social-link:hover { color: #d4af37; }
+.social-link:hover i { transform: translateY(-5px); text-shadow: 0 0 15px rgba(212, 175, 55, 0.6); }
+.social-link:hover span { opacity: 1; transform: translateY(0); }
+
+.copyright { font-size: 9px; color: #333; letter-spacing: 2px; border-top: 1px solid #111; padding-top: 30px; width: 100%; max-width: 600px; }
+
+/* =========================================
+   7. WHATSAPP FLOTANTE (CORREGIDO - NO OVERLAP)
+   ========================================= */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    width: 60px; /* Ancho inicial (solo ícono) */
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+    z-index: 1000;
+    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s;
+    overflow: hidden; /* Importante para ocultar el texto */
+}
+
+/* El ícono siempre visible */
+.whatsapp-float i {
+    font-size: 30px;
+    flex-shrink: 0; /* Evita que el ícono se aplaste */
+    transition: transform 0.3s ease;
+}
+
+/* El texto inicia oculto (ancho 0) */
+.whatsapp-text {
+    white-space: nowrap;
+    opacity: 0;
+    max-width: 0; /* Truco: ancho 0 para que no ocupe espacio */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    margin-left: 0; /* Sin margen al inicio */
+}
+
+/* --- ESTADO HOVER (AL PASAR MOUSE) --- */
+.whatsapp-float:hover {
+    width: 210px; /* Se estira el botón */
+    background: linear-gradient(135deg, #128C7E, #075E54);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+    justify-content: center; /* Mantiene todo centrado */
+}
+
+.whatsapp-float:hover .whatsapp-text {
+    opacity: 1;
+    max-width: 150px; /* El texto crece y empuja al ícono suavemente */
+    margin-left: 15px; /* Crea espacio entre ícono y texto */
+}
+
+.whatsapp-float:hover i {
+    /* Opcional: si quieres que el ícono gire un poco al abrir */
+    transform: rotate(10deg);
+}
+
+/* Animación de pulso (Recuperada) */
+@keyframes whatsappPulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-float::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    animation: whatsappPulse 2s infinite;
+    z-index: -1;
+}
+
+/* =========================================
+   8. KEYFRAMES Y RESPONSIVE (ORIGINALES)
+   ========================================= */
+
+/* ZOALUM - Versión PC (completa con brillo) */
+@keyframes liquidTexturePC {
+    0% { background-position: 0% 0%; filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6)); }
+    50% { background-position: 50% 50%; filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.9)); }
+    100% { background-position: 100% 100%; filter: drop-shadow(0 0 15px rgba(168, 228, 255, 0.8)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.3)); }
+}
+
+/* D'VIL - Versión PC (completa) */
+@keyframes darkLiquidPC {
+    0% { background-position: 0% 0%; filter: drop-shadow(0 0 15px rgba(255, 0, 0, 0.4)); }
+    50% { background-position: 50% 50%; filter: drop-shadow(0 0 25px rgba(139, 0, 0, 0.8)); }
+    100% { background-position: 100% 100%; filter: drop-shadow(0 0 15px rgba(0, 0, 0, 1)) drop-shadow(0 0 30px rgba(255, 0, 0, 0.5)); }
+}
+
+/* ZOALUM - Versión Móvil */
+@keyframes liquidTextureMobile {
+    0% { background-position: 0% 0%; text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+    50% { background-position: 50% 50%; text-shadow: 0 0 30px rgba(255, 255, 255, 0.5); }
+    100% { background-position: 100% 100%; text-shadow: 0 0 20px rgba(168, 228, 255, 0.3); }
+}
+
+/* D'VIL - Versión Móvil */
+@keyframes darkLiquidMobile {
+    0% { background-position: 0% 0%; text-shadow: 0 0 20px rgba(255, 0, 0, 0.2); }
+    50% { background-position: 50% 50%; text-shadow: 0 0 30px rgba(139, 0, 0, 0.4); }
+    100% { background-position: 100% 100%; text-shadow: 0 0 20px rgba(0, 0, 0, 0.3); }
+}
+
+@keyframes elegantWave {
+    0% { transform: translateY(0) scale(1); }
+    10% { transform: translateY(-0.6em) scale(1.05); }
+    20% { transform: translateY(0) scale(1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeInDown { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes revealContainer { to { opacity: 1; transform: scale(1); } }
+@keyframes subtlePulse { 0% { background-size: 120% 120%; } 100% { background-size: 135% 135%; } }
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px) {
+    .cards-container, .products-container { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .card { height: 450px; }
+    .animated-text { font-size: 8vw; }
+}
+
+@media (max-width: 768px) {
+    .spacer { display: none; }
+    .title-container { flex-direction: column; gap: 10px; margin-bottom: 20px; }
+    .animated-text { font-size: 15vw; justify-content: center; }
+    
+    #word-ZOALUM span { animation: liquidTextureMobile 8s ease-in-out infinite alternate, elegantWave 10s ease-in-out infinite; }
+    #word-DVIL span { animation: darkLiquidMobile 6s ease-in-out infinite alternate, elegantWave 10s ease-in-out infinite; }
+    
+    .subtitle { font-size: 10px; margin-bottom: 30px; }
+    .collections { padding: 60px 5%; }
+    .cards-container { grid-template-columns: 1fr; max-width: 400px; }
+    .card { height: 400px; }
+    .btn-luxury { padding: 15px 40px; font-size: 9px; }
+    
+    /* Ajustes móviles catálogo */
+    .products-container { padding: 0 20px; }
+    .product-card { width: 100%; max-width: 350px; }
+    
+    /* Ajustes WhatsApp móvil */
+    .whatsapp-float { bottom: 20px; right: 20px; width: 60px; height: 60px; }
+    .whatsapp-float:hover { width: 200px; }
+}
+
+@media (max-width: 480px) {
+    .nav-links li a { font-size: 8px; }
+    .whatsapp-float { width: 50px; height: 50px; bottom: 15px; right: 15px; }
+    .whatsapp-float:hover { width: 180px; }
+    /* En móviles muy pequeños, quizás no mostramos texto, o sí, tú decides */
+    /* .whatsapp-float:hover .whatsapp-text { display: none; } */
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    @media (max-width: 768px) {
+        .animated-text span { animation: elegantWave 10s ease-in-out infinite !important; text-shadow: 0 0 15px currentColor !important; }
+    }
+}
