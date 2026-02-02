@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección ELLA | ZOALUM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header-catalog">
+        <nav>
+            <div class="logo">ZOALUM</div>
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> VOLVER AL INICIO</a>
+        </nav>
+    </header>
+
+    <section class="catalog-grid">
+        <div class="section-title">
+            <h2>COLECCIÓN ELLA</h2>
+            <p class="subtitle-catalog">PIEZAS SELECCIONADAS</p>
+            <div class="divider-small"></div>
+        </div>
+
+        <div class="products-container">
+            
+            <div class="product-card">
+                <div class="main-image-area">
+                    <img src="assets/1769664075795.png" alt="Arracadas Oro" id="main-img-1">
+                </div>
+                <div class="thumbnails">
+                    <img src="assets/1769664075795.png" onclick="cambiarImagen('main-img-1', this.src)" class="thumb active">
+                    <img src="assets/1769663125736.png" onclick="cambiarImagen('main-img-1', this.src)" class="thumb">
+                </div>
+                <div class="product-info">
+                    <h3>ARRACADAS ORO</h3>
+                    <p class="desc">Diseño circular clásico, acabado pulido de alta calidad.</p>
+                    <p class="price">$300.00 MXN</p>
+                    <a href="https://wa.me/525548588680?text=Me%20interesan%20las%20Arracadas" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> COMPRAR
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="main-image-area">
+                    <img src="assets/1769664168088.png" alt="Mariposa Tricolor" id="main-img-2">
+                </div>
+                <div class="thumbnails">
+                    <img src="assets/1769664168088.png" onclick="cambiarImagen('main-img-2', this.src)" class="thumb active">
+                    <img src="assets/1769663815734.png" onclick="cambiarImagen('main-img-2', this.src)" class="thumb">
+                </div>
+                <div class="product-info">
+                    <h3>MARIPOSA TRICOLOR</h3>
+                    <p class="desc">Exclusivo diseño en tres oros con movimiento.</p>
+                    <p class="price">$250.00 MXN</p>
+                    <a href="https://wa.me/525548588680?text=Me%20interesan%20las%20Mariposas" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> COMPRAR
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="main-image-area">
+                    <img src="assets/1769671931033.png" alt="Huggies Zirconia" id="main-img-3">
+                </div>
+                <div class="thumbnails">
+                    <img src="assets/1769671931033.png" onclick="cambiarImagen('main-img-3', this.src)" class="thumb active">
+                    <img src="assets/1769672017288.png" onclick="cambiarImagen('main-img-3', this.src)" class="thumb">
+                    <img src="assets/1769672130690.png" onclick="cambiarImagen('main-img-3', this.src)" class="thumb">
+                </div>
+                <div class="product-info">
+                    <h3>HUGGIES DIAMOND</h3>
+                    <p class="desc">Elegancia discreta con incrustaciones de zirconia brillante.</p>
+                    <p class="price">$280.00 MXN</p>
+                    <a href="https://wa.me/525548588680?text=Me%20interesan%20los%20Huggies%20Diamond" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> COMPRAR
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="main-image-area">
+                    <img src="assets/1769672486162.png" alt="Hojas Amatista" id="main-img-4">
+                </div>
+                <div class="thumbnails">
+                    <img src="assets/1769672486162.png" onclick="cambiarImagen('main-img-4', this.src)" class="thumb active">
+                    <img src="assets/1769672679081.png" onclick="cambiarImagen('main-img-4', this.src)" class="thumb">
+                    <img src="assets/1769672547482.png" onclick="cambiarImagen('main-img-4', this.src)" class="thumb">
+                </div>
+                <div class="product-info">
+                    <h3>HOJAS AMATISTA</h3>
+                    <p class="desc">Diseño inspirado en la naturaleza con cristales violeta.</p>
+                    <p class="price">$320.00 MXN</p>
+                    <a href="https://wa.me/525548588680?text=Me%20interesan%20las%20Hojas%20Amatista" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> COMPRAR
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="copyright">&copy; 2026 ZOALUM LUXURY.</div>
+        </div>
+    </footer>
+
+    <script>
+        function cambiarImagen(idImagenGrande, nuevaFuente) {
+            var imagenGrande = document.getElementById(idImagenGrande);
+            // Efecto visual rápido
+            imagenGrande.style.opacity = 0.7;
+            setTimeout(function() {
+                imagenGrande.src = nuevaFuente;
+                imagenGrande.style.opacity = 1;
+            }, 100);
+            
+            // Actualizar borde activo en miniaturas (Opcional, visual)
+            var card = imagenGrande.closest('.product-card');
+            var thumbs = card.querySelectorAll('.thumb');
+            thumbs.forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
