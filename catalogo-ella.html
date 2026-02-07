@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección para ELLA | ZOALUM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header-catalog">
+        <nav>
+            <div class="logo">ZOALUM</div>
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> VOLVER AL INICIO</a>
+        </nav>
+    </header>
+
+    <section class="catalog-grid">
+        <div class="section-title">
+            <h2>COLECCIÓN PARA ELLA</h2>
+            <div class="valentine-text">
+                Especial San Valentín <span class="heart-beat">
+                    <svg class="heart-svg" viewBox="0 0 32 29.6">
+                        <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+                            c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+                    </svg>
+                </span>
+            </div>
+            <div class="divider-small"></div>
+        </div>
+
+        <div class="products-container">
+            
+            <div class="product-card">
+                <span class="badge-love">-30% LOVE</span>
+                <div class="main-image-area">
+                    <img src="assets/1769664075795.png" alt="Arracadas Oro" id="main-img-1">
+                </div>
+                <div class="thumbnails">
+                    <img src="assets/1769664075795.png" onclick="cambiarImagen('main-img-1', this.src)" class="thumb active">
+                    <img src="assets/1769663125736.png" onclick="cambiarImagen('main-img-1', this.src)" class="thumb">
+                </div>
+                <div class="product-info">
+                    <h3>ARRACADAS ORO</h3>
+                    <p class="desc">Diseño circular clásico, acabado pulido de alta calidad.</p>
+                    
+                    <div class="price-box">
+                        <span class="old-price">$300.00</span>
+                        <span class="price">$210.00 MXN</span>
+                    </div>
+
+                    <a href="https://wa.me/525548588680?text=Me%20interesan%20las%20Arracadas%20con%20descuento" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> COMPRAR
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="badge-love">-30% LOVE</span>
+                <div class="main-image-area">
+                    <img src="assets/1769664168088.png" alt="Mariposa Tricolor" id="main-img-2">
+                </div>
+                <div class="thumbnails">
+                    <img src="assets/1769664168088.png" onclick="cambiarImagen('main-img-2', this.src)" class="thumb active">
+                    <img src="assets/1769663815734.png" onclick="cambiarImagen('main-img-2', this.src)" class="thumb">
+                </div>
+                <div class="product-info">
+                    <h3>MARIPOSA TRICOLOR</h3>
+                    <p class="desc">Exclusivo diseño en tres oros con movimiento.</p>
+                    
+                    <div class="price-box">
+                        <span class="old-price">$250.00</span>
+                        <span class="price">$175.00 MXN</span>
+                    </div>
+
+                    <a href="https://wa.me/525548588680?text=Me%20interesan%20las%20Mariposas%20con%20descuento" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> COMPRAR
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="badge-love">-30% LOVE</span>
+                <div class="main-image-area">
+                    <img src="assets/1769671931033.png" alt="Huggies Zirconia" id="main-img-3">
+                </div>
+                <div class="thumbnails">
+                    <img src="assets/1769671931033.png" onclick="cambiarImagen('main-img-3', this.src)" class="thumb active">
+                    <img src="assets/1769672017288.png" onclick="cambiarImagen('main-img-3', this.src)" class="thumb">
+                    <img src="assets/1769672130690.png" onclick="cambiarImagen('main-img-3', this.src)" class="thumb">
+                </div>
+                <div class="product-info">
+                    <h3>HUGGIES DIAMOND</h3>
+                    <p class="desc">Elegancia discreta con incrustaciones de zirconia brillante.</p>
+                    
+                    <div class="price-box">
+                        <span class="old-price">$280.00</span>
+                        <span class="price">$196.00 MXN</span>
+                    </div>
+
+                    <a href="https://wa.me/525548588680?text=Me%20interesan%20los%20Huggies%20con%20descuento" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> COMPRAR
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <span class="badge-love">-40% LOVE</span>
+                <div class="main-image-area">
+                    <img src="assets/1769672486162.png" alt="Hojas Amatista" id="main-img-4">
+                </div>
+                <div class="thumbnails">
+                    <img src="assets/1769672486162.png" onclick="cambiarImagen('main-img-4', this.src)" class="thumb active">
+                    <img src="assets/1769672679081.png" onclick="cambiarImagen('main-img-4', this.src)" class="thumb">
+                    <img src="assets/1769672547482.png" onclick="cambiarImagen('main-img-4', this.src)" class="thumb">
+                </div>
+                <div class="product-info">
+                    <h3>HOJAS AMATISTA</h3>
+                    <p class="desc">Diseño inspirado en la naturaleza con cristales violeta.</p>
+                    
+                    <div class="price-box">
+                        <span class="old-price">$320.00</span>
+                        <span class="price">$192.00 MXN</span>
+                    </div>
+
+                    <a href="https://wa.me/525548588680?text=Me%20interesan%20las%20Hojas%20Amatista%20con%20descuento" target="_blank" class="btn-buy">
+                        <i class="fa-brands fa-whatsapp"></i> COMPRAR
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="copyright">&copy; 2026 ZOALUM LUXURY.</div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/525548588680" target="_blank" class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="whatsapp-text">Preguntar por oferta</span>
+    </a>
+
+<!-- ... todo tu HTML anterior ... -->
+
+    <script>
+        // Función para cambiar imágenes (tu código original)
+        function cambiarImagen(idImagenGrande, nuevaFuente) {
+            var imagenGrande = document.getElementById(idImagenGrande);
+            imagenGrande.style.opacity = 0.7;
+            setTimeout(function() {
+                imagenGrande.src = nuevaFuente;
+                imagenGrande.style.opacity = 1;
+            }, 100);
+            
+            var card = imagenGrande.closest('.product-card');
+            var thumbs = card.querySelectorAll('.thumb');
+            thumbs.forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Lluvia de corazones (tu código original)
+        function createHeartRain() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart-rain");
+            const emojis = ['❤️', '💖', '💗', '❤️‍🔥']; 
+            heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            heart.style.left = Math.random() * 100 + "vw";
+
+            const depth = Math.random();
+            let size, duration;
+
+            if (depth < 0.5) { 
+                size = Math.random() * 15 + 10;
+                duration = Math.random() * 3 + 6; 
+                heart.style.opacity = 0.6;
+            } else if (depth < 0.85) { 
+                size = Math.random() * 20 + 25;
+                duration = Math.random() * 2 + 4; 
+                heart.style.opacity = 0.85;
+            } else { 
+                size = Math.random() * 30 + 45;
+                duration = Math.random() * 1 + 3; 
+                heart.style.zIndex = "10000"; 
+            }
+            
+            heart.style.fontSize = size + "px";
+            heart.style.animationDuration = duration + "s";
+            
+            document.body.appendChild(heart);
+
+            setTimeout(() => { heart.remove(); }, 9000);
+        }
+
+        // Iniciar lluvia de corazones
+        let rainInterval = setInterval(createHeartRain, 250);
+        setTimeout(() => { clearInterval(rainInterval); }, 6000);
+
+        // NUEVO: Mejoras para el corazón SVG
+        document.addEventListener('DOMContentLoaded', function() {
+            // Agregar gradiente SVG para el corazón
+            if (!document.getElementById('heart-gradient')) {
+                const svgDefs = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svgDefs.setAttribute('width', '0');
+                svgDefs.setAttribute('height', '0');
+                
+                const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+                
+                const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+                gradient.setAttribute('id', 'heart-gradient');
+                gradient.setAttribute('x1', '0%');
+                gradient.setAttribute('y1', '0%');
+                gradient.setAttribute('x2', '100%');
+                gradient.setAttribute('y2', '100%');
+                
+                const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+                stop1.setAttribute('offset', '0%');
+                stop1.setAttribute('stop-color', '#ff0055');
+                
+                const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+                stop2.setAttribute('offset', '50%');
+                stop2.setAttribute('stop-color', '#ff4d4d');
+                
+                const stop3 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+                stop3.setAttribute('offset', '100%');
+                stop3.setAttribute('stop-color', '#ff99cc');
+                
+                gradient.appendChild(stop1);
+                gradient.appendChild(stop2);
+                gradient.appendChild(stop3);
+                defs.appendChild(gradient);
+                svgDefs.appendChild(defs);
+                
+                document.body.appendChild(svgDefs);
+            }
+            
+            // Interactividad para el corazón
+            const heartBeat = document.querySelector('.heart-beat');
+            if (heartBeat) {
+                heartBeat.addEventListener('mouseenter', function() {
+                    this.style.animation = 'none';
+                    setTimeout(() => {
+                        this.style.animation = '';
+                    }, 10);
+                });
+                
+                heartBeat.addEventListener('click', function() {
+                    const heartSvg = this.querySelector('.heart-svg');
+                    heartSvg.style.transform = 'scale(1.5)';
+                    heartSvg.style.filter = 'drop-shadow(0 0 25px rgba(255, 0, 85, 1)) brightness(1.5)';
+                    
+                    setTimeout(() => {
+                        heartSvg.style.transform = '';
+                        heartSvg.style.filter = '';
+                    }, 300);
+                    
+                    createFloatingHeart();
+                });
+            }
+            
+            function createFloatingHeart() {
+                const floatingHeart = document.createElement('div');
+                floatingHeart.innerHTML = '❤️';
+                floatingHeart.style.position = 'fixed';
+                floatingHeart.style.top = '50%';
+                floatingHeart.style.left = '50%';
+                floatingHeart.style.fontSize = '40px';
+                floatingHeart.style.color = '#ff0055';
+                floatingHeart.style.zIndex = '10001';
+                floatingHeart.style.pointerEvents = 'none';
+                floatingHeart.style.transform = 'translate(-50%, -50%) scale(0)';
+                floatingHeart.style.transition = 'all 1s ease-out';
+                
+                document.body.appendChild(floatingHeart);
+                
+                setTimeout(() => {
+                    floatingHeart.style.transform = 'translate(-50%, -150%) scale(1)';
+                    floatingHeart.style.opacity = '1';
+                }, 10);
+                
+                setTimeout(() => {
+                    floatingHeart.style.opacity = '0';
+                    floatingHeart.style.transform = 'translate(-50%, -250%) scale(0.5)';
+                }, 800);
+                
+                setTimeout(() => {
+                    document.body.removeChild(floatingHeart);
+                }, 1800);
+            }
+        });
+    </script>
+
+</body>
+</html>
